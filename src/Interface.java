@@ -4,29 +4,54 @@
 
 import java.util.*;
 
-public class Interface {
-    static Scanner console = new Scanner(System.in);
+public class Interface
+{
+    public void run(){
+        //this method should control the flow of the program
+    }
+    public static void main(String[] args) {
+        Interface intFace = new Interface();
+        Scanner console = new Scanner(System.in);
+        intFace.run();
 
-    int option = 0;
+        int selector = 0;
 
-    while (1) {
-        System.out.println("Please Select 1, 2, 3, 4 or 5\n");
-        System.out.println("|| 1. Add Depot || 2. Remove Depot || 3. Add Product to Depot || 4. Remove Product from Depot || 5. Exit System ||");
-        System.out.print("Selection: ");
-        option = console.nextInt();
-        switch (option) {
-            case 1: System.out.println("Add Depot\n");
+        Depot depot1 = new Depot();
+        Depot depot2 = new Depot();
+
+        while (selector != 5) {
+            System.out.println("\n1. Depot Management\n2. Product Management\n3. Query");
+            selector = console.nextInt();
+            switch (selector) {
+                case 1:
+                    System.out.println("\n1. Add Depot\n2. Remove Depot");
+                    selector = console.nextInt();
+                    if (selector == 1) {
+                        System.out.println("1. Depot 1\n2. Depot 2");
+                        selector = console.nextInt();
+                        if (selector == 1)
+                            depot1.setName();
+                        else if (selector == 2)
+                            depot2.setName();
+                    }
                     break;
-            case 2: System.out.println("Remove Depot\n");
+                case 2:
+                    System.out.println("1. Add Product\n2. Remove Product");
+                    selector = console.nextInt();
+                case 3:
+                    System.out.println("1. Depot Query\n2. Product Query");
+                    selector = console.nextInt();
+                    if (selector == 1) {
+                        System.out.println("1. Depot 1\n2. Depot 2");
+                        selector = console.nextInt();
+                        if (selector == 1)
+                            System.out.println("Name: " + depot1.getName());
+                        else if (selector == 2)
+                            System.out.println("Name: " + depot2.getName());
+                    }
                     break;
-            case 3: System.out.println("Add Product to Depot\n");
-                    break;
-            case 4: System.out.println("Remove Product from Depot\n");
-                    break;
-            case 5: break;
-            default: System.out.println("Invaid Selection: \n"+ option);
+            }
         }
     }
 }
-
 
