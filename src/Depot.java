@@ -4,22 +4,18 @@
 
 import java.util.*;
 
-public class Depot
-{
+public class Depot {
     Scanner console = new Scanner(System.in);
-    private String name;
 
-    public Depot()
-    {
-        name = "";
-    }
+    private String depotName;
 
-    public void setName(){
-        System.out.println("Enter name: ");
-        String name = console.nextLine();
+    public void setName(String name){
+        this.depotName = name;
     }
     public String getName(){
-        return name;
+        return depotName;
     }
-    //add other methods
+    public void printName(){
+        System.out.printf("Name: %s", getName());
+    }
 }
