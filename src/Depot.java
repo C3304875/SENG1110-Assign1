@@ -10,12 +10,15 @@ public class Depot {
     private String depotName;
 
     public void setName(String name){
-        this.depotName = name;
+        depotName = name;
     }
     public String getName(){
         return depotName;
     }
     public void printName(){
         System.out.printf("Name: %s", getName());
+    }
+    public void clear() {
+        depotName = "";
     }
 }
