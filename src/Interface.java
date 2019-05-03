@@ -4,11 +4,11 @@
 
 import java.util.*;
 
-public class Interface {
+public class Interface
+{
     Scanner console = new Scanner(System.in);
-    private int selector;
-    private String temp;
 
+    private String temp;
     private Depot depot1, depot2;
 
     private void depotManagement(){
@@ -17,6 +17,8 @@ public class Interface {
         Depot depot2 = new Depot();
 
         while (true) {
+            int selector;
+
             System.out.println("[1]. Add Depot\n[2]. Remove Depot");
             System.out.print("\nPlease Make a Selection: ");
             selector = Integer.parseInt(console.nextLine());
@@ -32,12 +34,12 @@ public class Interface {
                             System.out.print("Depot Name: ");
                             temp = console.nextLine();
                             depot1.setName(temp);
-                            break;
+                            return;
                         case 2:
                             System.out.print("Depot Name: ");
                             temp = console.nextLine();
                             depot2.setName(temp);
-                            break;
+                            return;
                     }
                 case 2:
                     System.out.print("Remove Depot [1] / [2]: ");
@@ -47,42 +49,53 @@ public class Interface {
                     switch (selector) {
                         case 1:
                             depot1.setName(null);
-                            break;
+                            System.out.println("Depot 1 Deleted...");
+                            return;
                         case 2:
                             depot2.setName(null);
-                            break;
+                            System.out.println("Depot 2 Deleted...");
+                            return;
                     }
             }
         }
     }
-
     private void productManagement(){
+        int selector;
+
         System.out.println("[1]. Add Product\n[2]. Remove Product");
         System.out.print("Please Make a Selection: ");
         selector = Integer.parseInt(console.nextLine());
 
         switch (selector) {
             case 1:
-                System.out.print("Product Name: ");
-                temp = console.nextLine();
+                System.out.print("Depot [1] / [2]\n");
+                System.out.print("Please Make a Selection: ");
+                selector = Integer.parseInt(console.nextLine());
+
+                switch (selector) {
+                    case 1: depot1.addProduct();
+                    case 2: depot2.addProduct();
+                }
+
+
 
         }
     }
-
     private void run() {
-        System.out.println("[1]. Depot Management");
+        int selector;
+
+        System.out.println("[1]. Depot Management\n[2]. Product Management");
         System.out.print("Please Make a Selection: ");
         selector = Integer.parseInt(console.nextLine());
 
         switch (selector) {
             case 1: depotManagement();
+            case 2: productManagement();
         }
     }
-
     public static void main(String[] args) {
         Interface intFace = new Interface();
         intFace.run();
     }
-
 }
 

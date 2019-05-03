@@ -2,28 +2,27 @@
 // Matthew Maiden
 // Assignment Schema Link: https://uonline.newcastle.edu.au/bbcswebdav/pid-4033358-dt-content-rid-20497413_1/courses/CRS.126440.2019.S1/SENG1110_6110_Assign1-2019-s1%281%29.pdf
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Product
 {
+    Scanner console = new Scanner(System.in);
+
     private String productName;
     private double price;
     private double weight;
     private int quantity;
 
-    Scanner console = new Scanner(System.in);
-    //add comments
-    public void setName(String name){
-        productName = name;
+    public void setName(String nm){
+        productName = nm;
     }
-
-    public String getName(){
-        System.out.println("Name: ");
-        String name = console.nextLine();
-        Product p = new Product();
-        p.setName(name);
-        System.out.println("Name: ");
-        return name;
+    public void setPrice(float pr) {
+        price = pr;
     }
-    //add other methods
+    public void setWeight(float wt) {
+        weight = wt;
+    }
+    public void setQuantity(int qt) {
+        quantity = qt;
+    }
 }
