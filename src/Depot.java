@@ -8,6 +8,7 @@ public class Depot {
     Scanner console = new Scanner(System.in);
 
     private String depotName;
+    private String temp;
 
     public void setName(String name){
         depotName = name;

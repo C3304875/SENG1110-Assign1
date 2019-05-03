@@ -5,56 +5,77 @@
 import java.util.*;
 
 public class Interface {
+    Scanner console = new Scanner(System.in);
+    private int selector;
+    private String temp;
 
     private Depot depot1, depot2;
 
-    public void run() {
+    private void depotManagement(){
         Scanner console = new Scanner(System.in);
         Depot depot1 = new Depot();
         Depot depot2 = new Depot();
 
-        int selector;
-
         while (true) {
-            System.out.println("[1]. Depot Management\n...\n[3]. Query\n");
-            System.out.print("Please Make a Selection: ");
+            System.out.println("[1]. Add Depot\n[2]. Remove Depot");
+            System.out.print("\nPlease Make a Selection: ");
             selector = Integer.parseInt(console.nextLine());
+
             switch (selector) {
                 case 1:
-                    System.out.println("[1]. Add Depot\n[2]. Remove Depot");
+                    System.out.print("Add Depot [1] / [2]: ");
+                    System.out.print("\nPlease Make a Selection: ");
                     selector = Integer.parseInt(console.nextLine());
+
                     switch (selector) {
                         case 1:
                             System.out.print("Depot Name: ");
-                            String temp = console.nextLine();
+                            temp = console.nextLine();
                             depot1.setName(temp);
                             break;
                         case 2:
-                            System.out.println("Choose Depot: \nDepot [1]\nDepot [2]");
-                            selector = Integer.parseInt(console.nextLine());
-                            switch (selector) {
-                                case 1:
-                                    /* REMOVE DEPOT */
-                                    depot1.clear();
-                                    System.out.println("Depot 1 Removed Successfully.\n");
-                                    break;
-                                case 2:
-                                    /* REMOVE DEPOT */
-                                    depot2.clear();
-                                    System.out.println("Depot 2 Removed Successfully.\n");
-                                    break;
-                            }
+                            System.out.print("Depot Name: ");
+                            temp = console.nextLine();
+                            depot2.setName(temp);
+                            break;
                     }
                 case 2:
-                    break;
-                case 3:
-                    System.out.println("[1]. Depot Qeury");
+                    System.out.print("Remove Depot [1] / [2]: ");
+                    System.out.print("\nPlease Make a Selection: ");
                     selector = Integer.parseInt(console.nextLine());
+
                     switch (selector) {
                         case 1:
-                            System.out.printf("Depot 1 Name: %s\nDepot 2 Name: %s\n", depot1.getName(), depot2.getName());
+                            depot1.setName(null);
+                            break;
+                        case 2:
+                            depot2.setName(null);
+                            break;
                     }
             }
+        }
+    }
+
+    private void productManagement(){
+        System.out.println("[1]. Add Product\n[2]. Remove Product");
+        System.out.print("Please Make a Selection: ");
+        selector = Integer.parseInt(console.nextLine());
+
+        switch (selector) {
+            case 1:
+                System.out.print("Product Name: ");
+                temp = console.nextLine();
+
+        }
+    }
+
+    private void run() {
+        System.out.println("[1]. Depot Management");
+        System.out.print("Please Make a Selection: ");
+        selector = Integer.parseInt(console.nextLine());
+
+        switch (selector) {
+            case 1: depotManagement();
         }
     }
 

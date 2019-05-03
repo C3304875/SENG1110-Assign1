@@ -6,15 +6,15 @@ import java.util.Scanner;
 
 public class Product
 {
-    private String name;
+    private String productName;
     private double price;
     private double weight;
     private int quantity;
 
     Scanner console = new Scanner(System.in);
     //add comments
-    public void setName(String nm){
-        name = nm;
+    public void setName(String name){
+        productName = name;
     }
 
     public String getName(){
