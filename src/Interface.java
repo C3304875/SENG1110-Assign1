@@ -34,13 +34,13 @@ public class Interface {
                     switch (selector) {
                         case 1:
                             System.out.print("Depot Name: ");
-                            temp = console.nextLine();
-                            depot1.setName(temp);
+                            tempString = console.nextLine();
+                            depot1.setName(tempString);
                             return;
                         case 2:
                             System.out.print("Depot Name: ");
-                            temp = console.nextLine();
-                            depot2.setName(temp);
+                            tempString = console.nextLine();
+                            depot2.setName(tempString);
                             return;
                     }
                 case 2:
@@ -79,8 +79,14 @@ public class Interface {
                 System.out.print("Product Price: ");
                 tempFloat = Float.parseFloat(console.nextLine());
                 product1.setPrice(tempFloat);
-                product1.setWeight();
-                product1.setQuantity();
+                System.out.print("Product Weight: ");
+                tempFloat = Float.parseFloat(console.nextLine());
+                product1.setWeight(tempFloat);
+                System.out.print("Product Quantity: ");
+                tempInt = Integer.parseInt(console.nextLine());
+                product1.setQuantity(tempInt);
+                System.out.print("");
+
                 product1.setDepot();
             }
             else if (selector == 2) {
