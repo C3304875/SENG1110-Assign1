@@ -4,12 +4,14 @@
 
 import java.util.*;
 
-public class Interface
-{
+public class Interface {
     Scanner console = new Scanner(System.in);
 
-    private String temp;
+    private String tempString;
+    private int tempInt;
+    private float tempFloat;
     private Depot depot1, depot2;
+    private Product product1, product2, product3;
 
     private void depotManagement(){
         Scanner console = new Scanner(System.in);
@@ -66,19 +68,41 @@ public class Interface
         System.out.print("Please Make a Selection: ");
         selector = Integer.parseInt(console.nextLine());
 
-        switch (selector) {
-            case 1:
-                System.out.print("Depot [1] / [2]\n");
-                System.out.print("Please Make a Selection: ");
-                selector = Integer.parseInt(console.nextLine());
-
-                switch (selector) {
-                    case 1: depot1.addProduct();
-                    case 2: depot2.addProduct();
-                }
-
-
-
+        if (selector == 1) {
+            System.out.println("Product Slot: [1], [2] or [3]");
+            System.out.print("Please Make a Selection: ");
+            selector = Integer.parseInt(console.nextLine());
+            if (selector == 1) {
+                System.out.print("Product Name: ");
+                tempString = console.nextLine();
+                product1.setName(tempString);
+                System.out.print("Product Price: ");
+                tempFloat = Float.parseFloat(console.nextLine());
+                product1.setPrice(tempFloat);
+                product1.setWeight();
+                product1.setQuantity();
+                product1.setDepot();
+            }
+            else if (selector == 2) {
+                //product2.setName();
+                product2.setPrice();
+                product2.setWeight();
+                product2.setQuantity();
+                product2.setDepot();
+            }
+            else if (selector == 3) {
+                //product3.setName();
+                product3.setPrice();
+                product3.setWeight();
+                product3.setQuantity();
+                product3.setDepot();
+            }
+            else {
+                System.out.printf("Invalid Selection %d", selector);
+            }
+        }
+        else if (selector == 2) {
+            // ADD PRODUCT TO DEPOT 2
         }
     }
     private void run() {
