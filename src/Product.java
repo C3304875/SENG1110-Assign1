@@ -17,16 +17,16 @@ public class Product {
     public void setName(String nm){
         productName = nm;
     }
-    public void setPrice(float pr) {
+    public void setPrice(double pr) {
         price = pr;
     }
-    public void setWeight(float wt) {
+    public void setWeight(double wt) {
         weight = wt;
     }
     public void setQuantity(int qt) {
         quantity = qt;
     }
-    public void setDepot() {
+    public void setDepot(int dp) {
         System.out.print("Depot [1] / [2]: ");
         depot = console.nextLine();
     }

@@ -9,7 +9,7 @@ public class Interface {
 
     private String tempString;
     private int tempInt;
-    private float tempFloat;
+    private double tempDouble;
     private Depot depot1, depot2;
     private Product product1, product2, product3;
 
@@ -17,6 +17,9 @@ public class Interface {
         Scanner console = new Scanner(System.in);
         Depot depot1 = new Depot();
         Depot depot2 = new Depot();
+        tempString = "";
+        tempInt = 0;
+        tempDouble = 0.0;
 
         while (true) {
             int selector;
@@ -77,31 +80,51 @@ public class Interface {
                 tempString = console.nextLine();
                 product1.setName(tempString);
                 System.out.print("Product Price: ");
-                tempFloat = Float.parseFloat(console.nextLine());
-                product1.setPrice(tempFloat);
+                tempDouble = Double.parseDouble(console.nextLine());
+                product1.setPrice(tempDouble);
                 System.out.print("Product Weight: ");
-                tempFloat = Float.parseFloat(console.nextLine());
-                product1.setWeight(tempFloat);
+                tempDouble = Double.parseDouble(console.nextLine());
+                product1.setWeight(tempDouble);
                 System.out.print("Product Quantity: ");
                 tempInt = Integer.parseInt(console.nextLine());
                 product1.setQuantity(tempInt);
-                System.out.print("");
-
-                product1.setDepot();
+                System.out.print("Depot [1] / [2]: ");
+                tempInt = Integer.parseInt(console.nextLine());
+                product1.setDepot(tempInt);
             }
             else if (selector == 2) {
-                //product2.setName();
-                product2.setPrice();
-                product2.setWeight();
-                product2.setQuantity();
-                product2.setDepot();
+                System.out.print("Product Name: ");
+                tempString = console.nextLine();
+                product2.setName(tempString);
+                System.out.print("Product Price: ");
+                tempDouble = Double.parseDouble(console.nextLine());
+                product2.setPrice(tempDouble);
+                System.out.print("Product Weight: ");
+                tempDouble = Double.parseDouble(console.nextLine());
+                product2.setWeight(tempDouble);
+                System.out.print("Product Quantity: ");
+                tempInt = Integer.parseInt(console.nextLine());
+                product2.setQuantity(tempInt);
+                System.out.print("Depot [1] / [2]: ");
+                tempInt = Integer.parseInt(console.nextLine());
+                product2.setDepot(tempInt);
             }
             else if (selector == 3) {
-                //product3.setName();
-                product3.setPrice();
-                product3.setWeight();
-                product3.setQuantity();
-                product3.setDepot();
+                System.out.print("Product Name: ");
+                tempString = console.nextLine();
+                product3.setName(tempString);
+                System.out.print("Product Price: ");
+                tempDouble = Double.parseDouble(console.nextLine());
+                product3.setPrice(tempDouble);
+                System.out.print("Product Weight: ");
+                tempDouble = Double.parseDouble(console.nextLine());
+                product3.setWeight(tempDouble);
+                System.out.print("Product Quantity: ");
+                tempInt = Integer.parseInt(console.nextLine());
+                product3.setQuantity(tempInt);
+                System.out.print("Depot [1] / [2]: ");
+                tempInt = Integer.parseInt(console.nextLine());
+                product3.setDepot(tempInt);
             }
             else {
                 System.out.printf("Invalid Selection %d", selector);
