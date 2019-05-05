@@ -18,18 +18,16 @@ public class Depot {
     public void setName(String name) {
         depotName = name;
     }
-    public String getName() {
-        return depotName;
+    public void getInfo() {
+        if (depotName == null) {
+            System.out.println(" Does not Exist.\n");
+        }
+        else {
+            System.out.printf(" Name: %s\n", depotName);
+            System.out.printf("\nProducts: %d\n", productCount);
+        }
     }
     public void addProduct() {
-        /* Constructors */
-        depotName = "";
-        tempString = "";
-        tempDouble = 0.0;
-        tempInt = 0;
-        productCount = 0;
-        selector = 0;
-
         System.out.println("[1]. Add Product\n[2]. Remove Product");
         System.out.print("Please Make a Selection: ");
         selector = Integer.parseInt(console.nextLine());
@@ -51,9 +49,7 @@ public class Depot {
                 System.out.print("Product Quantity: ");
                 tempInt = Integer.parseInt(console.nextLine());
                 product1.setQuantity(tempInt);
-                System.out.print("Depot [1] / [2]: ");
-                tempInt = Integer.parseInt(console.nextLine());
-
+                productCount++;
             }
             else if (selector == 2) {
                 System.out.print("Product Name: ");
@@ -71,6 +67,8 @@ public class Depot {
                 System.out.print("Depot [1] / [2]: ");
                 tempInt = Integer.parseInt(console.nextLine());
                 product2.setDepot(tempInt);
+
+                productCount++;
             }
             else if (selector == 3) {
                 System.out.print("Product Name: ");
@@ -88,11 +86,12 @@ public class Depot {
                 System.out.print("Depot [1] / [2]: ");
                 tempInt = Integer.parseInt(console.nextLine());
                 product3.setDepot(tempInt);
+
+                productCount++;
             }
             else {
                 System.out.printf("Invalid Selection %d", selector);
             }
         }
     }
-
 }
