@@ -9,10 +9,10 @@ public class Product {
     Scanner console = new Scanner(System.in);
 
     private String productName;
-    private String depot;
     private double price;
     private double weight;
     private int quantity;
+    private int depot;
 
     public void setName(String nm){
         productName = nm;
@@ -27,7 +27,6 @@ public class Product {
         quantity = qt;
     }
     public void setDepot(int dp) {
-        System.out.print("Depot [1] / [2]: ");
-        depot = console.nextLine();
+        depot = dp;
     }
 }
