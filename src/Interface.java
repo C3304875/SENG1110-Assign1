@@ -79,6 +79,7 @@ public class Interface {
         selector = Integer.parseInt(console.nextLine());
         if (selector == 1) {
             System.out.print("Depot Slot [1], [2]: ");
+            selector = Integer.parseInt(console.nextLine());
             if (selector == 1) {
                 depot1.addProduct();
             }
