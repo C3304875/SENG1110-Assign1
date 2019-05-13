@@ -1,9 +1,11 @@
 // C3304875
 // Matthew Maiden
-// Assignment Schema Link: https://uonline.newcastle.edu.au/bbcswebdav/pid-4033358-dt-content-rid-20497413_1/courses/CRS.126440.2019.S1/SENG1110_6110_Assign1-2019-s1%281%29.pdf
+// SENG1110
 
-import javax.swing.plaf.synth.SynthStyle;
-import java.util.*;
+// This program makes use of TIO to enable a user
+// to keep track of a small shopping centre inventory.
+
+import java.util.Scanner;
 
 public class Product {
     Scanner console = new Scanner(System.in);
@@ -12,9 +14,15 @@ public class Product {
     private double price;
     private double weight;
     private int quantity;
-    private int depot;
 
-    public void setName(String nm){
+    public Product() { // Constructor
+        productName = "";
+        price = 0;
+        weight = 0;
+        quantity = 0;
+    }
+
+    public void setName(String nm){ // Receive name from Interface
         productName = nm;
     }
     public void setPrice(double pr) {
@@ -26,7 +34,19 @@ public class Product {
     public void setQuantity(int qt) {
         quantity = qt;
     }
-    public void setDepot(int dp) {
-        depot = dp;
+    public void getInfo() { // Output all info
+        System.out.printf("Product Name: %s\n", productName);
+        System.out.printf("Product Weight: %f kg\n", weight);
+        System.out.printf("Product Price: $%f\n", price);
+        System.out.printf("Quantity: %d", quantity);
+    }
+    public String getName(){
+        return productName;
+    }
+    public int getQuantity() { // Used for querys
+    	return quantity;
+	 }
+	 public double getPrice() { // Used for querys
+        return price;
     }
 }
